@@ -12,19 +12,19 @@ pipeline {
 
         stage('Compile') {
             steps {
-                sh 'mvn compile'
+                sh '/opt/homebrew/bin/mvn compile'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh '/opt/homebrew/bin/mvn test'
             }
         }
 
         stage('Package') {
             steps {
-                sh 'mvn clean package'
+                sh '/opt/homebrew/bin/mvn clean package'
 
                 archiveArtifacts artifacts: 'target/*.jar'
             }
